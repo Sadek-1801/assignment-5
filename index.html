@@ -4,9 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PH Paribahan</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css"
       rel="stylesheet"
@@ -18,20 +21,56 @@
         theme: {
           extend: {
             colors: {
-              clifford: '#da373d',
-            }
-          }
-        }
-      }
+              theme: "#1DD100",
+            },
+          },
+        },
+      };
     </script>
     <style>
       .font-popins {
-        font-family: "Poppins", sans-serif;
+        font-family: "Raleway", sans-serif;
+      }
+      .font-inter{
+        font-family: "Inter", sans-serif;
       }
     </style>
   </head>
   <body class="font-popins">
-  <h1>Hello World!</h1>
-  <script src="./scripts/main.js"></script>
+    <header class="container mx-auto px-8 lg:px-10">
+      <nav class="border-red-500 border-2">
+        <div class="navbar bg-base-100 flex justify-between items-center">
+          <div class="">
+            <a class="btn btn-ghost text-4xl font-extrabold">P-Ticket</a>
+          </div>
+          <div class="">
+            <ul class="menu menu-horizontal px-1 hidden lg:flex text-xl">
+              <li><a>Home</a></li>
+              <li><a>About</a></li>
+              <li><a>Destination</a></li>
+              <li><a>Search</a></li>
+            </ul>
+          </div>
+          <div>
+            <button class="btn text-theme bg-[#1DD1001a] border-theme border-1">
+              BUS<img src="./images/bus-icon.png" alt="" />
+            </button>
+          </div>
+        </div>
+      </nav>
+      <!-- Banner Section -->
+      <div class="hero min-h-full rounded-lg">
+        <div class="w-full"><img class="w-full object-cover" src="./images/banner.png" alt=""></div>
+        <div class="hero-overlay bg-opacity-10"></div>
+        <div class="hero-content text-center text-neutral-content">
+          <div class="max-w-2xl">
+            <h1 class="mb-5 text-6xl font-extrabold">End-to-End Travel with <br><span class="text-theme">P Paribahan</span></h1>
+            <p class="mb-5 fon">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
+            <a href="#"><button class="btn bg-theme border-none text-xl font-bold px-8 h">Buy Tickets</button></a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <script src="./scripts/main.js"></script>
   </body>
 </html>
