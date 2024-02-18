@@ -264,9 +264,9 @@
               </tfoot>
             </table>
           </div>
-          <div class="grid grid-cols-1">
-            <div id="coupon" class="join p-4">
-              <input id="coupon-input" class="input input-bordered join-item w-3/4" placeholder="Have any copupon?"/>
+          <div id="coupon" class="grid grid-cols-1">
+            <div  class="join p-4">
+              <input id="coupon-input" class="input input-bordered join-item w-3/4" placeholder="Have any copupon?" disabled/>
               <button id="coupon-btn" class="btn join-item rounded-r-full bg-theme w-1/4">Apply</button>
             </div>
           </div>
@@ -291,15 +291,15 @@
               <div class="label">
                 <span id="name" class="label-text text-2xl font-bold">Phone Number*</span>
               </div>
-              <input id="number" type="text" placeholder="Your Mobile Number" class="input input-bordered w-full" />
+              <input id="number" type="number" placeholder="Your Mobile Number" class="input input-bordered w-full" required/>
             </label>
             <label class="form-control w-full">
               <div class="label">
                 <span id="email" class="label-text text-2xl font-bold">Email ID</span>
               </div>
-              <input type="text" placeholder="Enter Your Email" class="input input-bordered w-full" />
+              <input type="email" placeholder="Enter Your Email" class="input input-bordered w-full" />
             </label>
-            <input type="button" id="next" class="btn w-full bg-theme text-2xl font-bold" value="Next" disabled>
+            <input type="button" id="next" class="btn w-full bg-theme text-2xl font-bold" value="Next">
             <div class="flex justify-around">
               <p>Terms and Conditions</p>
               <p>Cancellation Policy</p>
@@ -308,6 +308,24 @@
         </div>
       </div>
     </section>
+    <!-- modal div -->
+    <section id="modal" class="hidden">
+      <div  class="w-full flex justify-center items-center bg-black bg-opacity-50">
+      <div class=" bg-white p-16 rounded-lg shadow-lg w-2/3">
+        <div>
+          <img src="./images/success.png" alt="">
+        </div>
+        <h3 class="font-bold text-lg">SUCCESS</h3>
+        <p class="py-4">Thank you for Booking Our Bus Seats. 
+              We are working hard to find the best service and deals for you.
+        </p>
+        <p>Shortly you will find a confirmation in your email.</p>
+        <button id="btn-close" class="btn w-full bg-theme text-2xl font-bold">Continue</button>
+      </div>
+    </div>
+    </section>
+    
+  
     <script src="./scripts/main.js"></script>
   </body>
 </html>
