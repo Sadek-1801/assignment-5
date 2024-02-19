@@ -9,14 +9,17 @@ const grandTotal= document.getElementById('grand-total');
 const couponInput= document.getElementById('coupon-input');
 const couponBtn= document.getElementById('coupon-btn');
 const nameFeild= document.getElementById('name');
-const number= document.getElementById('number');
-const email= document.getElementById('email');
+const numberFeild= document.getElementById('number');
+const emailFeild= document.getElementById('email');
 const next= document.getElementById('next');
 const seats = document.querySelectorAll('.btn-active')
 const tableBody = document.getElementById('table-body');
 const modalOpen = document.getElementById('modal')
 const modalBtn = document.getElementById('btn-close')
 const busSection = document.getElementById('bus-section')
+const discounted = document.getElementById('discount')
+const discountAmount = document.getElementById('discount-amount')
+// new Element
 let count = 0;
 let sum = 0;
 remainingSeat.innerText = seats.length;
@@ -36,7 +39,11 @@ for(let seat of seats){
         tr.appendChild(td3)
         count++;
         sum += fare;
-        if(count <= 4 && count > 0){
+        if(count <= 0){
+            alert("Please select atleast one seat")
+        }else if(count > 4 ){
+            alert("you cannot choose more than 4 seats")
+        }else {
             tableBody.appendChild(tr);
             total.innerText = sum;
             grandTotal.innerText = sum;
@@ -46,26 +53,14 @@ for(let seat of seats){
             seatCount.innerText = count;
             remainingSeat.innerText = seats.length - count;
             couponVal(count);
-        }else {
-            alert("you cannot choose more than 4 seats")
+            next.disabled = false;
+            modalBtn.addEventListener("click", function(){
+                window.location.reload()
+            })
+
         }
-        next.addEventListener("click", function(){
-            busSection.classList.add('hidden')
-            modalOpen.classList.remove('hidden')
-        })
-        modalBtn.addEventListener("click", function(){
-            count = 0;
-            sum = 0;
-            remainingSeat.innerText = seats.length;
-            tableBody.innerHTML = "";
-            total.innerText = 0;
-            grandTotal.innerText = 0;
-            btn.removeAttribute('style');
-            btn.disabled = false;
-            seatCount.innerText = count;
-            modalOpen.classList.add('hidden')
-            busSection.classList.remove('hidden')
-        })
+        
+        
     })
 }
 function couponVal(count){
@@ -73,12 +68,18 @@ function couponVal(count){
         couponInput.removeAttribute('disabled')
         couponBtn.addEventListener("click", function(){
             if(couponInput.value === "NEW15"){
-                grandTotal.innerText = sum - sum * 0.15;
+                let discount = sum * 0.15;
+                discountAmount.innerText = discount;
+                grandTotal.innerText = sum - discount;
                 coupon.classList.add('hidden')
+                discounted.classList.remove('hidden')
                 couponInput.value = "";
             }else if(couponInput.value === "Couple 20"){
-                grandTotal.innerText = sum - sum * 0.2;
+                let discount = sum * 0.15;
+                discountAmount.innerText = discount;
+                grandTotal.innerText = sum - discount;
                 coupon.classList.add('hidden')
+                discounted.classList.remove('hidden')
                 couponInput.value = "";
             }else {
                 grandTotal.innerText = sum;
@@ -88,6 +89,17 @@ function couponVal(count){
         })
     }
 }
+function nextBtn(){
+        if(numberFeild.value.length < 11){
+            alert("Please Provide a Valid Cell Number") 
+        }else
+        {
+        busSection.classList.add('hidden')
+        modalOpen.classList.remove('hidden')
+    }
+}
+
+
 
 
 
