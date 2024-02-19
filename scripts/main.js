@@ -68,7 +68,7 @@ function couponVal(count){
         couponInput.removeAttribute('disabled')
         couponBtn.addEventListener("click", function(){
             if(couponInput.value === "NEW15"){
-                let discount = sum * 0.15;
+                let discount = Math.round(sum * 0.15);
                 discountAmount.innerText = discount;
                 grandTotal.innerText = sum - discount;
                 coupon.classList.add('hidden')
